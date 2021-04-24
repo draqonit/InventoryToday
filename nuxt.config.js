@@ -12,6 +12,10 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [
+      //<script src="https://kit.fontawesome.com/48315e193a.js" crossorigin="anonymous"></script>
+      {crossorigin: 'anonymous', type: 'text/javascript', src: 'https://kit.fontawesome.com/48315e193a.js'}
     ]
   },
 
@@ -34,7 +38,13 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    "@nuxtjs/axios",
   ],
+
+  //axios ni boss
+  axios: {
+    baseURL: process.env.BASE_URL || 'http://localhost:5000'
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
